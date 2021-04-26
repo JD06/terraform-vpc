@@ -3,10 +3,14 @@ variable "infra_env" {
   description = "Infra Environment Details"
 }
 
+variable "name" {
+  type = string
+  description = "Name of the environment"
+}
+
 variable "vpc_cidr" {
   type = string
   description = "The IP range to use for VPC"
-  default = "10.0.0.0/16"
 }
 
 variable "public_subnet" {
