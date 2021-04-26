@@ -17,9 +17,9 @@ variable "public_subnet" {
   type = map(number)
   description = "Map of AZ to a number that should be used for public subnet"
   default = {
-    "public-2a" = 1
-    "public-2b" = 2
-    "public-2c" = 3
+    "public-subnet-2a" = 1
+    "public-subnet-2b" = 2
+    "public-subnet-2c" = 3
   }
 }
 
@@ -27,8 +27,8 @@ variable "private_subnet" {
   type = map(number)
   description = "Map of AZ to a number that should be used for public subnet"
   default = {
-    "private-2a" = 4
-    "private-2b" = 5
-    "private-2c" = 6
+    "private-subnet-2a" = 4
+    "private-subnet-2b" = 5
+    "private-subnet-2c" = 6
   }
 }

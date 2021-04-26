@@ -1,4 +1,4 @@
 *.idea
 staging/*.terraform
 staging/*.tfstate
-staging/*.backup
+staging/*.tfstate.backup
