@@ -1,6 +1,6 @@
 variable "infra_env" {
   type = string
-  description = "Infrastructure Environment"
+  description = "Infra Environment Details"
 }
 
 variable "vpc_cidr" {

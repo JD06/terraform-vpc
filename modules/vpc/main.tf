@@ -2,7 +2,7 @@ resource "aws_vpc" "vpc" {
   cidr_block = var.vpc_cidr
 
   tags = {
-    Name          = "assignment-${var.infra_env}-vpc"
+    Name          = "${var.infra_env}-vpc"
     Environment   = var.infra_env
     ManagedBy     =  "terraform"
   }
@@ -14,7 +14,7 @@ resource "aws_subnet" "public" {
   vpc_id = aws_vpc.vpc.id
 
   tags = {
-    Name      = "assignment-${var.infra_env}-public-subnet"
+    Name      = "${var.infra_env}-public-subnet"
     Environment     = var.infra_env
     ManagedBy       = "terraform"
     Subnet          = "${each.key}-${each.value}"
@@ -27,7 +27,7 @@ resource "aws_subnet" "private" {
   vpc_id = aws_vpc.vpc.id
 
   tags = {
-    Name      = "assignment-${var.infra_env}-private-subnet"
+    Name      = "${var.infra_env}-private-subnet"
     Environment     = var.infra_env
     ManagedBy       = "terraform"
     Subnet          = "${each.key}-${each.value}"

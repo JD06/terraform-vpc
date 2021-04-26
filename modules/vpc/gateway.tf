@@ -2,7 +2,7 @@ resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.vpc.id
 
   tags = {
-    Name              = "assignment-${var.infra_env}-vpc"
+    Name              = "${var.infra_env}-vpc"
     Environment       = var.infra_env
     ManagedBy         = "terraform"
   }
@@ -19,7 +19,7 @@ resource "aws_eip" "nat" {
   }
 
   tags = {
-    Name              = "assignment-${var.infra_env}-eip"
+    Name              = "${var.infra_env}-eip"
     Environment       = var.infra_env
     VPC               = aws_vpc.vpc.id
     ManagedBy         = "terraform"
@@ -31,7 +31,7 @@ resource "aws_nat_gateway" "nat-gw" {
   subnet_id = aws_subnet.public[element(keys(aws_subnet.public), 0)].id
 
   tags = {
-    Name              = "assignment-${var.infra_env}-nat-gw"
+    Name              = "${var.infra_env}-nat-gw"
     Environment       = var.infra_env
     VPC               = aws_vpc.vpc.id
     ManagedBy         = "terraform"
@@ -44,7 +44,7 @@ resource "aws_route_table" "public" {
   vpc_id = aws_vpc.vpc.id
 
   tags = {
-    Name              = "assignment-${var.infra_env}-public-rt"
+    Name              = "${var.infra_env}-public-rt"
     Environment       = var.infra_env
     VPC               = aws_vpc.vpc.id
     ManagedBy         = "terraform"
@@ -58,7 +58,7 @@ resource "aws_route_table" "private" {
   vpc_id = aws_vpc.vpc.id
 
   tags = {
-    Name               = "assignment-${var.infra_env}-private-rt"
+    Name               = "${var.infra_env}-private-rt"
     Environment        = var.infra_env
     VPC                = aws_vpc.vpc.id
     ManagedBy          = "terraform"
