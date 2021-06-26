@@ -1,7 +1,3 @@
-provider "aws" {
-  region = "us-west-1"
-}
-
 terraform {
   backend "s3" {
     bucket = "staging-testnew"
@@ -11,7 +7,7 @@ terraform {
 }
 
 module "vpc" {
-  source = "../modules/vpc"
+  source = "github.com/JD06/terraform-module-vpc.git"
   infra_env = "staging"
   name = "mystaging"
   vpc_cidr = "10.0.0.0/16"
