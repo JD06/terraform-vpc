@@ -1,10 +1,10 @@
-/*terraform {
+terraform {
   backend "s3" {
     bucket = "staging-testnew"
     key    = "staging.tfstate"
     region = "us-west-1"
   }
-}*/
+}
 
 module "vpc" {
   source    = "github.com/JD06/terraform-module-vpc.git?ref=v3.0.0"
